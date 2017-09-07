@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+          integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+          crossorigin=""/>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <!-- CSS  -->
+    <link href="node_modules/material-icons/css/material-icons.css" rel="stylesheet">
+    <link href="node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
+    <link href="styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Mitr|Squada+One" rel="stylesheet" />
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+
+    <!-- Custom CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "styles/styles.css" />
+    <link rel= "stylesheet" type= "text/css" href= "styles/buttons.css" />
+
+</head>
+<body>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Raspberry Pi</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/orders.html" id="ordersnav">Move!</a></li>
+            <li><a href="/map.html" id="mapnav">Map</a></li>
+            <li><a href="/about.html" id="aboutnav">About</a></li>
+            <li><a ng-click="appCtrl.killPi()">Exit Server</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav background">
+            <li><h3 class="font-black container top-space">Raspberry Pi Options</h3></li>
+            <li><a href="/" class="container top-space">Home</a></li>
+            <li><a href="/orders.html" class="container top-space">Move!</a></li>
+            <li><a href="/map.html" class="container top-space">Map</a></li>
+            <li><a href="/about.html" class="container top-space">About</a></li>
+            <li><a class="container top-space" ng-click="appCtrl.killPi()">Exit Server</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse" id="navmob"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>What is Raspberry Pi Cart?</h1>
+    <div class="responsive">
+        <img src="images/IMG_1079.jpg" style="height: 600px; width: auto; max-height: 100%"/>
+        <img src="images/IMG_1080.jpg" style="height: 600px; width: auto; max-height: 100%"/>
+        <img src="images/IMG_1061.jpg" style="height: 600px; width: auto; max-height: 100%"/>
+    </div>
+    <br />
+    <h3>Bio</h3>
+    <p>
+        The Raspberry Pi project was started in September 2016 to push the boundaries of innovation.
+        It currently is built with Java and JavaScript with Spring-Boot and AngularJS.
+    </p>
+</main>
+
+
+</body>
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="node_modules/leaflet/dist/leaflet.js"></script>
+
+<!--cdn imports-->
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/leaflet/dist/leaflet.js"></script>
+<script src="node_modules/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+<script src="node_modules/slick-carousel/slick/slick.min.js"></script>
+<!--customjs imports-->
+<!--jQuery imports-->
+<script src= "scripts/jquery/init.js"></script>
+<script src= "scripts/jquery/camera.js"></script>
+<!--AngularJS imports-->
+<script src= "scripts/app.js"></script>
+<script src= "scripts/MapController.js"></script>
+<script src= "scripts/AppController.js"></script>
+<script src= "scripts/DebugController.js"></script>
+<script src= "scripts/rewindFactory.js"></script>
+<script src= "scripts/ledService.js"></script>
+<script src= "scripts/driveService.js"></script>
+<script src= "scripts/exitService.js"></script>
+<script src="scripts/jquery/slider.js"></script>
+</html>

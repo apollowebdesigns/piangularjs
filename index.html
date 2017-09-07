@@ -3,7 +3,8 @@
 <head>
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
     <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="node_modules/material-icons/css/material-icons.css" rel="stylesheet">
+    <link href="node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
     <link href="styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="https://fonts.googleapis.com/css?family=Mitr|Squada+One" rel="stylesheet" />
     <!-- Custom CSS -->
@@ -20,18 +21,18 @@
         <a id="logo-container" href="#" class="brand-logo">Raspberry Pi</a>
         <ul class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
-            <li><a href="/orders" id="ordersnav">Move!</a></li>
-            <li><a href="/map" id="mapnav">Map</a></li>
-            <li><a href="/about" id="aboutnav">About</a></li>
+            <li><a href="/orders.html" id="ordersnav">Move!</a></li>
+            <li><a href="/map.html" id="mapnav">Map</a></li>
+            <li><a href="/about.html" id="aboutnav">About</a></li>
             <li><a ng-click="appCtrl.killPi()">Exit Server</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav background">
             <li><h3 class="font-black container top-space">Raspberry Pi Options</h3></li>
             <li><a href="/" class="container top-space">Home</a></li>
-            <li><a href="/orders" class="container top-space">Move!</a></li>
-            <li><a href="/map" class="container top-space">Map</a></li>
-            <li><a href="/about" class="container top-space">About</a></li>
+            <li><a href="/orders.html" class="container top-space">Move!</a></li>
+            <li><a href="/map.html" class="container top-space">Map</a></li>
+            <li><a href="/about.html" class="container top-space">About</a></li>
             <li><a class="container top-space" ng-click="appCtrl.killPi()">Exit Server</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse" id="navmob"><i class="material-icons">menu</i></a>
