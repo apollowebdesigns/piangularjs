@@ -25,6 +25,7 @@
     "material-design-icons": "^3.0.1",
     "materialize": "^1.0.0",
     "slick": "^1.12.2",
-    "slick-carousel": "^1.7.1"
+    "slick-carousel": "^1.7.1",
+    "typeface-squada-one": "0.0.35"
   }
 }
