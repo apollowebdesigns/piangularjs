@@ -18,7 +18,7 @@ function orderDirectionService ($http, $log) {
 
     function _orderForwards() {
         $log.info('driving function entered function entered');
-        return $http.get("/hits/forwardsorder")
+        return $http.get("http://localhost:8888/hits/forwardsorder")
             .then(function(response) {
                 $log.info('forwardsorder carried out');
                 this.requestedData = "";
@@ -28,7 +28,7 @@ function orderDirectionService ($http, $log) {
 
     function _orderBackwards() {
         $log.info('driving function entered function entered');
-        return $http.get("/hits/backwardsorder")
+        return $http.get("http://localhost:8888/hits/backwardsorder")
             .then(function(response) {
                 $log.info('backwardsorder carried out');
                 this.requestedData = "";
@@ -38,7 +38,7 @@ function orderDirectionService ($http, $log) {
 
     function _orderLeft() {
         $log.info('driving function entered function entered');
-        return $http.get("/hits/leftorder")
+        return $http.get("http://localhost:8888/hits/leftorder")
             .then(function(response) {
                 $log.info('leftorder carried out');
                 this.requestedData = "";
@@ -48,7 +48,7 @@ function orderDirectionService ($http, $log) {
 
     function _orderRight() {
         $log.info('driving function entered function entered');
-        return $http.get("/hits/rightorder")
+        return $http.get("http://localhost:8888/hits/rightorder")
             .then(function(response) {
                 $log.info('rightorder carried out');
                 this.requestedData = "";

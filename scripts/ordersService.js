@@ -16,7 +16,7 @@ function ordersService ($http, $log) {
 
     function _orderData() {
         $log.info('driving function entered function entered');
-        return $http.get("/hits/execute")
+        return $http.get("http://localhost:8888/hits/execute")
             .then(function(response) {
                 $log.info('orders carried out');
                 this.requestedData = "";

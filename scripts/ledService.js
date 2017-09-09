@@ -11,7 +11,7 @@ function ledService ($http, $log) {
 
     function _getData() {
         $log.info("light function entered");
-        $http.get("/hits/blue")
+        $http.get("http://localhost:8888/hits/blue")
         .then(function(response) {
             $log.info('data received');
             this.requestedData = response.data;
