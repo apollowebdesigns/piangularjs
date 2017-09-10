@@ -28,6 +28,8 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function getIpAddress() {
         var url = window.location.href;
+        console.log("get that url!");
+        console.log(url);
         return url;
     }
 
