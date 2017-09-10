@@ -14,9 +14,17 @@ function ordersService ($http, $log) {
 
     this.requestedData = "";
 
+    function getIpAddress() {
+        var url = window.location.href;
+        url = url.substring(0, url.length - 1);
+        console.log("get that url!");
+        console.log(url);
+        return url;
+    }
+
     function _orderData() {
         $log.info('driving function entered function entered');
-        return $http.get("http://192.168.1.76:8888/hits/execute")
+        return $http.get(getIpAddress() + ":8888/hits/execute")
             .then(function(response) {
                 $log.info('orders carried out');
                 this.requestedData = "";

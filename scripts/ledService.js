@@ -9,9 +9,17 @@ function ledService ($http, $log) {
     var uniqueIP = "192.168.1.69", 
         uniqueIPparents = "192.168.1.74";
 
+    function getIpAddress() {
+        var url = window.location.href;
+        url = url.substring(0, url.length - 1);
+        console.log("get that url!");
+        console.log(url);
+        return url;
+    }
+
     function _getData() {
         $log.info("light function entered");
-        $http.get("http://192.168.1.76:8888/hits/blue")
+        $http.get(getIpAddress() + ":8888/hits/blue")
         .then(function(response) {
             $log.info('data received');
             this.requestedData = response.data;

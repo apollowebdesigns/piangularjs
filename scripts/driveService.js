@@ -28,15 +28,15 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function getIpAddress() {
         var url = window.location.href;
+        url = url.substring(0, url.length - 1);
         console.log("get that url!");
         console.log(url);
         return url;
     }
 
-
     function _driveData() {
         $log.info('driving function entered function entered');
-        return $http.get("http://192.168.1.76:8888/hits/motor")
+        return $http.get(getIpAddress() + ":8888/hits/motor")
         .then(function(response) {
             $log.info('data received');
             this.requestedData = "";
@@ -48,7 +48,7 @@ function driveService ($http, $log, $location, rewindFactory) {
         getIpAddress();
         console.dir("test?");
         $log.info('forwards function entered');
-        return $http.get("http://192.168.1.76:8888/hits/forwards")
+        return $http.get(getIpAddress() + ":8888/hits/forwards")
         .then(function(response) {
             $log.info('forwards hit');
             if (flag === undefined || flag.length === 0) rewindFactory.rewindRequests.push("/hits/backwards");
@@ -59,7 +59,7 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function _driveBackwards(flag) {
         $log.info('backwards function entered');
-        return $http.get("http://192.168.1.76:8888/hits/backwards")
+        return $http.get(getIpAddress() + ":8888/hits/backwards")
         .then(function(response) {
             $log.info('backwards hit');
             if (flag === undefined || flag.length === 0) rewindFactory.rewindRequests.push("/hits/forwards");
@@ -70,7 +70,7 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function _driveRight(flag) {
         $log.info('right function entered');
-        return $http.get("http://192.168.1.76:8888/hits/right")
+        return $http.get(getIpAddress() + ":8888/hits/right")
         .then(function(response) {
             $log.info('right hit');
             if (flag === undefined || flag.length === 0) rewindFactory.rewindRequests.push("/hits/left");
@@ -81,7 +81,7 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function _driveLeft(flag) {
         $log.info('left function entered');
-        return $http.get("http://192.168.1.76:8888/hits/left")
+        return $http.get(getIpAddress() + ":8888/hits/left")
         .then(function(response) {
             $log.info('left hit');
             if (flag === undefined || flag.length === 0) rewindFactory.rewindRequests.push("/hits/right");
@@ -92,16 +92,16 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function getRewind(arg) {
         switch(arg) {
-            case "http://192.168.1.76:8888/hits/backwards":
+            case getIpAddress() + ":8888/hits/backwards":
                 return _driveBackwards("flagged");
                 break;
-            case "http://192.168.1.76:8888/hits/forwards":
+            case getIpAddress() + ":8888/hits/forwards":
                 return _driveForwards("flagged");
                 break;
-            case "http://192.168.1.76:8888/hits/left":
+            case getIpAddress() + ":8888/hits/left":
                 return _driveLeft("flagged");
                 break;
-            case "http://192.168.1.76:8888/hits/right":
+            case getIpAddress() + ":8888/hits/right":
                 return _driveRight("flagged");
                 break;
         }
@@ -109,7 +109,7 @@ function driveService ($http, $log, $location, rewindFactory) {
 
     function _rewind() {
         $log.info('left function entered');
-        return $http.get("http://192.168.1.76:8888/hits/rewind")
+        return $http.get(getIpAddress() + ":8888/hits/rewind")
             .then(function(response) {
                 $log.info('lets rewind');
                 $log.info(response.data)
