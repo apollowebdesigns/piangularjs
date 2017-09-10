@@ -27,10 +27,8 @@ function driveService ($http, $log, $location, rewindFactory) {
     var redSdCardIp = "192.168.1.73";
 
     function getIpAddress() {
-        var secondUrl = $location;
-        console.debug("new url is");
-        console.debug(secondUrl);
-        return secondUrl
+        var url = window.location.href;
+        return url;
     }
 
 
