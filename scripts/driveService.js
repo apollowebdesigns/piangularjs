@@ -26,6 +26,18 @@ function driveService ($http, $log, rewindFactory) {
     var uniqueIPparents = "192.168.1.74";
     var redSdCardIp = "192.168.1.73";
 
+    function getIpAddress() {
+        var currentUrl = $(location).attr('href');
+        var firstPosition = currentUrl.indexOf("1");
+        var lastPosition = currentUrl.indexOf(":");
+        var removeSlash = currentUrl.length - 1;
+        var secondUrl = currentUrl.toString().slice(0, removeSlash);
+        console.debug("new url is");
+        console.debug(secondUrl);
+        return secondUrl
+    }
+
+
     function _driveData() {
         $log.info('driving function entered function entered');
         return $http.get("http://192.168.1.69:8888/hits/motor")
@@ -37,6 +49,7 @@ function driveService ($http, $log, rewindFactory) {
     }
 
     function _driveForwards(flag) {
+        getIpAddress();
         console.dir("test?");
         $log.info('forwards function entered');
         return $http.get("http://192.168.1.69:8888/hits/forwards")
