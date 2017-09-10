@@ -2,7 +2,7 @@ angular
     .module('app')
     .service('driveService', driveService);
 
-driveService.$inject = ['$http', '$log', 'rewindFactory'];
+driveService.$inject = ['$http', '$log', '$location', 'rewindFactory'];
 
 /**
  * Service controls Raspberry Pi Movement
@@ -10,7 +10,7 @@ driveService.$inject = ['$http', '$log', 'rewindFactory'];
  * @param $log
  * @param rewindFactory
  */
-function driveService ($http, $log, rewindFactory) {
+function driveService ($http, $log, $location, rewindFactory) {
     this.driveData = _driveData;
     this.driveForwards = _driveForwards;
     this.driveBackwards = _driveBackwards;
@@ -27,11 +27,7 @@ function driveService ($http, $log, rewindFactory) {
     var redSdCardIp = "192.168.1.73";
 
     function getIpAddress() {
-        var currentUrl = $(location).attr('href');
-        var firstPosition = currentUrl.indexOf("1");
-        var lastPosition = currentUrl.indexOf(":");
-        var removeSlash = currentUrl.length - 1;
-        var secondUrl = currentUrl.toString().slice(0, removeSlash);
+        var secondUrl = $location.toString();
         console.debug("new url is");
         console.debug(secondUrl);
         return secondUrl
