@@ -17,8 +17,6 @@ function ordersService ($http, $log) {
     function getIpAddress() {
         var url = window.location.href;
         url = url.substring(0, url.length - 1);
-        console.log("get that url!");
-        console.log(url);
         return url;
     }
 
