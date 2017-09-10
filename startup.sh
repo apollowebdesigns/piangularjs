@@ -1,5 +1,5 @@
 #!/bin/sh
 # startup.sh
 cd ~
-cd piangularjs
+cd /home/pi/piangularjs/
 sudo gulp
