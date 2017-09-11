@@ -10,13 +10,14 @@ driveService.$inject = ['$http', '$log', '$location', 'rewindFactory'];
  * @param $log
  * @param rewindFactory
  */
-function driveService ($http, $log, $location, rewindFactory) {
+function driveService ($http, $log, $window, rewindFactory) {
     this.driveData = _driveData;
     this.driveForwards = _driveForwards;
     this.driveBackwards = _driveBackwards;
     this.driveRight = _driveRight;
     this.driveLeft = _driveLeft;
     this.rewind = _rewind;
+    this.getIpAddress = getIpAddress;
 
     this.requestedData = "";
 
@@ -27,7 +28,7 @@ function driveService ($http, $log, $location, rewindFactory) {
     var redSdCardIp = "192.168.1.73";
 
     function getIpAddress() {
-        var url = window.location.href;
+        var url = $window.location.href;
         url = url.substring(0, url.length - 1);
         return url;
     }
