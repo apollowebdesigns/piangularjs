@@ -11,17 +11,22 @@
     <!-- Custom CSS -->
     <link rel= "stylesheet" type= "text/css" href= "styles/styles.css" />
     <link rel= "stylesheet" type= "text/css" href= "styles/buttons.css" />
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css" />
     <title>Raspberry Pi Application</title>
     <!--meta data tags-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <style>
+        #mapid { height: 900px; }
+    </style>
 </head>
 <body ng-app="app" ng-controller="AppController">
-<nav class="white" role="navigation">
+<nav class="white first" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Raspberry Pi</a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="">Home</a></li>
+            <li><a ui-sref="home">Home</a></li>
             <li><a ui-sref="orders" id="ordersnav">Move!</a></li>
             <li><a ui-sref="map" id="mapnav">Map</a></li>
             <li><a ui-sref="about" id="aboutnav">About</a></li>
@@ -30,7 +35,7 @@
 
         <ul id="nav-mobile" class="side-nav background">
             <li><h3 class="font-black container top-space">Raspberry Pi Options</h3></li>
-            <li><a ui-sref="" class="container top-space">Home</a></li>
+            <li><a ui-sref="home" class="container top-space">Home</a></li>
             <li><a ui-sref="orders" class="container top-space">Move!</a></li>
             <li><a ui-sref="map" class="container top-space">Map</a></li>
             <li><a ui-sref="about" class="container top-space">About</a></li>
@@ -43,6 +48,7 @@
 </body>
 <!--cdn imports-->
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/jquery-migrate/dist/jquery-migrate.min.js"></script>
 <script src="node_modules/slick-carousel/slick/slick.min.js"></script>
 <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
@@ -54,37 +60,6 @@
 <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
         integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
         crossorigin=""></script>
-<script>
-    var mymap = L.map('mapid').setView([50.7, -3.52751], 13);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXBvbGxvd2ViZGVzaWducyIsImEiOiJjajV6czJreHIwYzFnMnlud3IzY2kxZm00In0.QqYsU2Xovt4xFKu8vj2YYQ', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'your.mapbox.access.token'
-    }).addTo(mymap);
-
-    var folks = L.marker([50.856981, -3.352030]).addTo(mymap);
-    //folks.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
-
-    var base = L.marker([50.713535, -3.537174]).addTo(mymap);
-    //base.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
-
-    var exeterlibrary = L.marker([50.725125, -3.530498]).addTo(mymap);
-    //exeterlibrary.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
-
-    var metoffice = L.marker([50.727622, -3.475646]).addTo(mymap);
-    //metoffice.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
-
-    var uniexeter = L.marker([50.735210, -3.534355]).addTo(mymap);
-    //uniexeter.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
-
-    var polygon = L.polygon([
-        [50.713535, -3.537174],
-        [50.727622, -3.475646],
-        [50.735210, -3.534355]
-    ]).addTo(mymap);
-</script>
 <!--jQuery imports-->
 <script src= "scripts/jquery/init.js"></script>
 <script src= "scripts/jquery/camera.js"></script>

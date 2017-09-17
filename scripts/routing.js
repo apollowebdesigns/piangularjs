@@ -10,7 +10,8 @@ angular
         var mapState = {
             name: 'map',
             url: '/map',
-            templateUrl: 'templates/map.html'
+            templateUrl: 'templates/map.html',
+            controller: 'MapController'
         };
 
         var ordersState = {
