@@ -1,2 +1,2 @@
 angular
-    .module('app', ['leaflet-directive']);
+    .module('app', ['ui.router', 'leaflet-directive']);

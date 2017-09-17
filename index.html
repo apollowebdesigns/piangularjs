@@ -16,141 +16,81 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 </head>
-<body ng-app="app" ng-controller="AppController as appCtrl">
+<body ng-app="app" ng-controller="AppController">
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Raspberry Pi</a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
-            <li><a href="/orders.html" id="ordersnav">Move!</a></li>
-            <li><a href="/map.html" id="mapnav">Map</a></li>
-            <li><a href="/about.html" id="aboutnav">About</a></li>
+            <li><a href="">Home</a></li>
+            <li><a ui-sref="orders" id="ordersnav">Move!</a></li>
+            <li><a ui-sref="map" id="mapnav">Map</a></li>
+            <li><a ui-sref="about" id="aboutnav">About</a></li>
             <li><a ng-click="appCtrl.killPi()">Exit Server</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav background">
             <li><h3 class="font-black container top-space">Raspberry Pi Options</h3></li>
-            <li><a href="/" class="container top-space">Home</a></li>
-            <li><a href="/orders.html" class="container top-space">Move!</a></li>
-            <li><a href="/map.html" class="container top-space">Map</a></li>
-            <li><a href="/about.html" class="container top-space">About</a></li>
+            <li><a ui-sref="" class="container top-space">Home</a></li>
+            <li><a ui-sref="orders" class="container top-space">Move!</a></li>
+            <li><a ui-sref="map" class="container top-space">Map</a></li>
+            <li><a ui-sref="about" class="container top-space">About</a></li>
             <li><a class="container top-space" ng-click="appCtrl.killPi()">Exit Server</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse" id="navmob"><i class="material-icons">menu</i></a>
     </div>
 </nav>
-
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br><br>
-            <h1 class="header center teal-text text-lighten-2">Raspberry Pi Movement!</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-            </div>
-            <div class="row center">
-                <a href="/map" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Find that pi</a>
-            </div>
-            <br><br>
-
-        </div>
-    </div>
-    <div class="parallax"><img src="styles/background1.jpg" alt="Unsplashed background img 1"></div>
-</div>
-
-<div class="parallax-container valign-wrapper">
-    <div class="parallax"><iframe id="camera-screen" frameborder="0" class="iframe"></iframe></div>
-</div>
-
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col s12 center button-background">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <div>
-                    <div class="row">
-                        <div class="row">
-                            <button id="forwards" class="btn waves-effect waves-light" ng-click="appCtrl.driveForwards()">forwards</button>
-                        </div>
-                        <div class="row">
-                            <button class="btn waves-effect waves-light" ng-click="appCtrl.driveLeft()">left</button>
-                            <button class="btn-floating btn-large waves-effect waves-light red" ng-click="appCtrl.getData()"><i class="large material-icons">volume_up</i></button>
-                            <button class="btn waves-effect waves-light" ng-click="appCtrl.driveRight()">right</button>
-                        </div>
-                        <div class="row">
-                            <button class="btn waves-effect waves-light" ng-click="appCtrl.driveBackwards()">backwards</button>
-                        </div>
-                    </div>
-                </div>
-                <h4>Rewind The Pi</h4>
-                <div>
-                    <button class="btn-floating btn-large waves-effect waves-light purple" ng-click="appCtrl.rewind()"><i class="large material-icons">replay</i></button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div ng-controller="DebugController as debugCtrl" class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-                <h5 class="header col s12 light">Debug mode : --> {{debugCtrl.rewindRequests}} </h5>
-            </div>
-        </div>
-    </div>
-    <div class="parallax"><img src="styles/background3.jpg" alt="Unsplashed background img 3"></div>
-</div>
-
-<footer class="page-footer teal">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Raspberry Pi Application</h5>
-                <p class="grey-text text-lighten-4">The Raspberry Pi App is a mobile app that you can use to view your Raspberry Pi cart and control it</p>
-
-
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Settings</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Connect</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            Made by <a class="brown-text text-lighten-3" href="http://localhost">Pi Power</a>
-        </div>
-    </div>
-</footer>
+<ui-view></ui-view>
 </body>
 <!--cdn imports-->
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/slick-carousel/slick/slick.min.js"></script>
 <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
 <script src="node_modules/leaflet/dist/leaflet.js"></script>
 <script src="node_modules/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
 <!--customjs imports-->
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+        integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+        crossorigin=""></script>
+<script>
+    var mymap = L.map('mapid').setView([50.7, -3.52751], 13);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXBvbGxvd2ViZGVzaWducyIsImEiOiJjajV6czJreHIwYzFnMnlud3IzY2kxZm00In0.QqYsU2Xovt4xFKu8vj2YYQ', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'your.mapbox.access.token'
+    }).addTo(mymap);
+
+    var folks = L.marker([50.856981, -3.352030]).addTo(mymap);
+    //folks.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
+
+    var base = L.marker([50.713535, -3.537174]).addTo(mymap);
+    //base.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
+
+    var exeterlibrary = L.marker([50.725125, -3.530498]).addTo(mymap);
+    //exeterlibrary.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
+
+    var metoffice = L.marker([50.727622, -3.475646]).addTo(mymap);
+    //metoffice.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
+
+    var uniexeter = L.marker([50.735210, -3.534355]).addTo(mymap);
+    //uniexeter.bindPopup("<b>The Pi was here!</b><br />Beep Beep").openPopup();
+
+    var polygon = L.polygon([
+        [50.713535, -3.537174],
+        [50.727622, -3.475646],
+        [50.735210, -3.534355]
+    ]).addTo(mymap);
+</script>
 <!--jQuery imports-->
 <script src= "scripts/jquery/init.js"></script>
 <script src= "scripts/jquery/camera.js"></script>
 <!--AngularJS imports-->
 <script src= "scripts/app.js"></script>
+<script src= "scripts/routing.js"></script>
 <script src= "scripts/MapController.js"></script>
 <script src= "scripts/AppController.js"></script>
 <script src= "scripts/DebugController.js"></script>

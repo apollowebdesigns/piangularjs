@@ -29,4 +29,10 @@ describe('Users factory', function() {
         spyOn(driveService, 'getIpAddress').and.returnValue('http://localhost:8888/hits/forwards');
         expect(driveService.getIpAddress()).toEqual('http://localhost:8888/hits/forwards');
     });
+
+    // it('rewinds object', function() {
+    //     spyOn(driveService, 'getUrl').and.returnValue('http://localhost:8888/');
+    //     spyOn(driveService, 'driveForwards').and.returnValue('complete');
+    //     expect(driveService.rewind('http://localhost:8888/hits/forwards')).toEqual('http://localhost:8888/hits/forwards');
+    // });
 });

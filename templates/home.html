@@ -1,0 +1,98 @@
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">Raspberry Pi Movement!</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+            </div>
+            <div class="row center">
+                <a ui-sref="/map" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Find that pi</a>
+            </div>
+            <br><br>
+
+        </div>
+    </div>
+    <div class="parallax"><img src="styles/background1.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="parallax"><iframe id="camera-screen" frameborder="0" class="iframe"></iframe></div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center button-background">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <div>
+                    <div class="row">
+                        <div class="row">
+                            <button id="forwards" class="btn waves-effect waves-light" ng-click="appCtrl.driveForwards()">forwards</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn waves-effect waves-light" ng-click="appCtrl.driveLeft()">left</button>
+                            <button class="btn-floating btn-large waves-effect waves-light red" ng-click="appCtrl.getData()"><i class="large material-icons">volume_up</i></button>
+                            <button class="btn waves-effect waves-light" ng-click="appCtrl.driveRight()">right</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn waves-effect waves-light" ng-click="appCtrl.driveBackwards()">backwards</button>
+                        </div>
+                    </div>
+                </div>
+                <h4>Rewind The Pi</h4>
+                <div>
+                    <button class="btn-floating btn-large waves-effect waves-light purple" ng-click="appCtrl.rewind()"><i class="large material-icons">replay</i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div ng-controller="DebugController as debugCtrl" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 light">Debug mode : --> {{debugCtrl.rewindRequests}} </h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="styles/background3.jpg" alt="Unsplashed background img 3"></div>
+</div>
+
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Raspberry Pi Application</h5>
+                <p class="grey-text text-lighten-4">The Raspberry Pi App is a mobile app that you can use to view your Raspberry Pi cart and control it</p>
+
+
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Settings</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="brown-text text-lighten-3" href="http://localhost">Pi Power</a>
+        </div>
+    </div>
+</footer>

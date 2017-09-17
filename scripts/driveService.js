@@ -18,6 +18,7 @@ function driveService ($http, $log, $window, rewindFactory) {
     this.driveLeft = _driveLeft;
     this.rewind = _rewind;
     this.getIpAddress = getIpAddress;
+    this.getRewind = _getRewind;
 
     this.requestedData = "";
 
@@ -27,8 +28,14 @@ function driveService ($http, $log, $window, rewindFactory) {
     var uniqueIPparents = "192.168.1.74";
     var redSdCardIp = "192.168.1.73";
 
+    var vm = this;
+
+    vm.getUrl = function () {
+        return $window.location.href
+    }
+
     function getIpAddress() {
-        var url = $window.location.href;
+        var url = vm.getUrl();
         url = url.substring(0, url.length - 1);
         return url;
     }
@@ -89,7 +96,7 @@ function driveService ($http, $log, $window, rewindFactory) {
         });
     }
 
-    function getRewind(arg) {
+    function _getRewind(arg) {
         switch(arg) {
             case getIpAddress() + ":8888/hits/backwards":
                 return _driveBackwards("flagged");
