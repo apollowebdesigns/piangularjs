@@ -18,8 +18,8 @@ function orderDirectionService ($http, $log) {
 
     function getIpAddress() {
         var url = window.location.href;
-        url = url.substring(0, url.length - 1);
-        return url;
+        var resultUrl = url.slice(0, 19);
+        return resultUrl;
     }
 
     function _orderForwards() {
