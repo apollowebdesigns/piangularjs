@@ -33,7 +33,7 @@ function driveService ($http, $log, rewindFactory) {
     function getIpAddress() {
         var url = window.location.href;
         var resultUrl = url.slice(0, 19);
-        return url;
+        return resultUrl;
     }
 
     function _driveData() {
