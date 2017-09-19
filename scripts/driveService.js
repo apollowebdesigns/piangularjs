@@ -30,13 +30,8 @@ function driveService ($http, $log, rewindFactory) {
 
     var vm = this;
 
-    vm.getUrl = function () {
-        return window.location.href
-    }
-
     function getIpAddress() {
-        var url = vm.getUrl();
-        url = url.substring(0, url.length - 1);
+        var url = window.location.href;
         return url;
     }
 
