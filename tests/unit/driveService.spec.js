@@ -14,6 +14,8 @@ describe('Users factory', function() {
         $httpBackend = $injector.get('$httpBackend');
         forwardsRequestHandler = $httpBackend.when('GET', '/auth.py')
             .respond({userId: 'userX'}, {'A-Token': 'xxx'});
+
+        $httpBackend.expectGET('http://localhost:8888/hits/forwards').respond(200,{data:'expected response'});
     }));
 
     it('should be defined', function() {
@@ -33,6 +35,6 @@ describe('Users factory', function() {
     // it('rewinds object', function() {
     //     spyOn(driveService, 'getUrl').and.returnValue('http://localhost:8888/');
     //     spyOn(driveService, 'driveForwards').and.returnValue('complete');
-    //     expect(driveService.rewind('http://localhost:8888/hits/forwards')).toEqual('http://localhost:8888/hits/forwards');
+    //     expect(driveService.rewind()).toEqual('http://localhost:8888/hits/forwards');
     // });
 });

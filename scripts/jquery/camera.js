@@ -7,6 +7,8 @@
         var secondUrl = currentUrl.toString().slice(0, removeSlash);
         var rawness = String.raw`:2222/html/min.php`;
         var calcUrl = secondUrl.concat(rawness);
+        console.log("the current url is");
+        console.log(calcUrl);
         $("#camera-screen").attr("src", calcUrl);
     });
 })(jQuery);
