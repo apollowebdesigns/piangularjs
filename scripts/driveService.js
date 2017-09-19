@@ -2,7 +2,7 @@ angular
     .module('app')
     .service('driveService', driveService);
 
-driveService.$inject = ['$http', '$log', '$location', 'rewindFactory'];
+driveService.$inject = ['$http', '$log', 'rewindFactory'];
 
 /**
  * Service controls Raspberry Pi Movement
@@ -10,7 +10,7 @@ driveService.$inject = ['$http', '$log', '$location', 'rewindFactory'];
  * @param $log
  * @param rewindFactory
  */
-function driveService ($http, $log, $window, rewindFactory) {
+function driveService ($http, $log, rewindFactory) {
     this.driveData = _driveData;
     this.driveForwards = _driveForwards;
     this.driveBackwards = _driveBackwards;
@@ -31,7 +31,7 @@ function driveService ($http, $log, $window, rewindFactory) {
     var vm = this;
 
     vm.getUrl = function () {
-        return $window.location.href
+        return window.location.href
     }
 
     function getIpAddress() {
