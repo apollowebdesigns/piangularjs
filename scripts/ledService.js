@@ -11,7 +11,7 @@ function ledService ($http, $log) {
 
     function getIpAddress() {
         var url = window.location.href;
-        var end = window.location.href.toString().indexOf(indexOf("/#"));
+        var end = window.location.href.toString().indexOf("/#");
         var resultUrl = url.slice(0, end);
         return resultUrl;
     }
