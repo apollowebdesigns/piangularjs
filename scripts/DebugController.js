@@ -5,6 +5,6 @@ angular
 DebugController.$inject = ['rewindFactory'];
 
 function DebugController(rewindFactory) {
-    let vm = this;
+    var vm = this;
     vm.rewindRequests = rewindFactory.rewindRequests;
 }

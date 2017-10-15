@@ -5,7 +5,7 @@ angular
 AppController.$inject = ['ledService', 'driveService', 'exitService'];
 
 function AppController(ledService, driveService, exitService) {
-    let vm = this;
+    var vm = this;
     vm.requestedData = 'test data';
     vm.getData = ledService.getData;
     vm.driveForwards = driveService.driveForwards;
