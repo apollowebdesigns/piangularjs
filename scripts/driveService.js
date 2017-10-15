@@ -24,15 +24,15 @@ function driveService ($http, $log, rewindFactory) {
 
     localStorage.rewindRequests = [];
 
-    var uniqueIP = "192.168.1.69";
-    var uniqueIPparents = "192.168.1.74";
-    var redSdCardIp = "192.168.1.73";
+    const uniqueIP = "192.168.1.69";
+    const uniqueIPparents = "192.168.1.74";
+    const redSdCardIp = "192.168.1.73";
 
-    var vm = this;
+    const vm = this;
 
     function getIpAddress() {
-        var url = window.location.href;
-        var resultUrl = url.slice(0, 19);
+        let url = window.location.href;
+        let resultUrl = url.slice(0, 19);
         return resultUrl;
     }
 
