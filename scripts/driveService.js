@@ -31,8 +31,9 @@ function driveService ($http, $log, rewindFactory) {
     var vm = this;
 
     function getIpAddress() {
-        let url = window.location.href;
-        let resultUrl = url.slice(0, 19);
+        var url = window.location.href;
+        var end = window.location.href.toString().indexOf("/#");
+        var resultUrl = url.slice(0, end);
         return resultUrl;
     }
 

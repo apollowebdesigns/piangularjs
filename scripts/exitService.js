@@ -10,8 +10,9 @@ function exitService ($http, $log) {
 
     function getIpAddress() {
         var url = window.location.href;
-        url = url.substring(0, url.length - 1);
-        return url;
+        var end = window.location.href.toString().indexOf("/#");
+        var resultUrl = url.slice(0, end);
+        return resultUrl;
     }
 
     function _killPi() {
