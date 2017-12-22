@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <!--<link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />-->
     <!-- CSS  -->
     <link href="node_modules/material-icons/css/material-icons.css" rel="stylesheet">
     <link href="node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
@@ -13,33 +13,35 @@
     <link rel= "stylesheet" type= "text/css" href= "styles/buttons.css" />
     <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick-theme.css" />
+    <link href='/node_modules/mapbox-gl/dist/mapbox-gl.css' rel='stylesheet' />
     <title>Raspberry Pi Application</title>
     <!--meta data tags-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <style>
         #mapid { height: 900px; }
+        /*body { background-color: grey darken-4 }*/
     </style>
 </head>
-<body ng-app="app" ng-controller="AppController as appCtrl">
-<nav class="white first" role="navigation">
+<body ng-app="app" class="blue-grey lighten-5" ng-controller="AppController as appCtrl">
+<nav class="blue-grey darken-4 first" role="navigation">
     <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">Raspberry Pi</a>
+        <a id="logo-container" href="#" class="brand-logo light-blue-text">Raspberry Pi</a>
         <ul class="right hide-on-med-and-down">
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="orders" id="ordersnav">Move!</a></li>
-            <li><a ui-sref="map" id="mapnav">Map</a></li>
-            <li><a ui-sref="about" id="aboutnav">About</a></li>
-            <li><a ng-click="appCtrl.killPi()">Exit Server</a></li>
+            <li><a ui-sref="home" class="white-text">Home</a></li>
+            <li><a ui-sref="orders" class="white-text" id="ordersnav">Move!</a></li>
+            <li><a ui-sref="map" class="white-text" id="mapnav">Map</a></li>
+            <li><a ui-sref="about" class="white-text" id="aboutnav">About</a></li>
+            <li><a ng-click="appCtrl.killPi()" class="white-text">Exit Server</a></li>
         </ul>
 
-        <ul id="nav-mobile" class="side-nav background">
-            <li><h3 class="font-black container top-space">Raspberry Pi Options</h3></li>
-            <li><a ui-sref="home" class="container top-space">Home</a></li>
-            <li><a ui-sref="orders" class="container top-space">Move!</a></li>
-            <li><a ui-sref="map" class="container top-space">Map</a></li>
-            <li><a ui-sref="about" class="container top-space">About</a></li>
-            <li><a class="container top-space" ng-click="appCtrl.killPi()">Exit Server</a></li>
+        <ul id="nav-mobile" class="side-nav background blue-grey darken-4">
+            <li><h3 class="font-black container top-space light-blue-text">Raspberry Pi Options</h3></li>
+            <li><a ui-sref="home" class="container top-space white-text">Home</a></li>
+            <li><a ui-sref="orders" class="container top-space white-text">Move!</a></li>
+            <li><a ui-sref="map" class="container top-space white-text">Map</a></li>
+            <li><a ui-sref="about" class="container top-space white-text">About</a></li>
+            <li><a class="container top-space white-text" ng-click="appCtrl.killPi()">Exit Server</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse" id="navmob"><i class="material-icons">menu</i></a>
     </div>
@@ -53,13 +55,10 @@
 <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
-<script src="node_modules/leaflet/dist/leaflet.js"></script>
+<!--<script src="node_modules/leaflet/dist/leaflet.js"></script>-->
 <script src="node_modules/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
 <!--customjs imports-->
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
-        integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
-        crossorigin=""></script>
+<script src='/node_modules/mapbox-gl/dist/mapbox-gl.js'></script>
 <!--jQuery imports-->
 <script src= "scripts/jquery/init.js"></script>
 <script src= "scripts/jquery/camera.js"></script>
