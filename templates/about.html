@@ -1,16 +1,28 @@
 <main class="container">
     <h1>What is Raspberry Pi Cart?</h1>
-    <div class="responsive">
-        <img src="images/IMG_1079.jpg" style="height: 600px; width: auto; max-height: 100%"/>
-        <img src="images/IMG_1080.jpg" style="height: 600px; width: auto; max-height: 100%"/>
-        <img src="images/IMG_1061.jpg" style="height: 600px; width: auto; max-height: 100%"/>
+    <div class="carousel">
+        <a class="carousel-item" style="height: 350px; width: auto" href="#one!"><img src="images/IMG_1079.jpg" style="height: 800px; width: auto; max-height: 100%"></a>
+        <a class="carousel-item" style="height: 350px; width: auto" href="#two!"><img src="images/IMG_1080.jpg" style="height: 800px; width: auto; max-height: 100%"></a>
+        <a class="carousel-item" style="height: 350px; width: auto" href="#three!"><img src="images/IMG_1061.jpg" style="height: 800px; width: auto; max-height: 100%"></a>
     </div>
     <br />
-    <h3>Bio</h3>
-    <p>
-        The Raspberry Pi project was started in September 2016 to push the boundaries of innovation.
-        It currently is built with Java and JavaScript with Spring-Boot and AngularJS.
-    </p>
+    <div class="row">
+        <div class="col s12 m3">
+
+        </div>
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Bio</span>
+                    <p>The Raspberry Pi project was started in September 2016 to push the boundaries of innovation.
+                        It currently is built with Java and JavaScript with Spring-Boot and AngularJS.</p>
+                </div>
+                <div class="card-action waves-effect">
+                    <a ui-sref="home">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
 <script src="/node_modules/jquery-migrate/dist/jquery-migrate.min.js"></script>
@@ -18,3 +30,9 @@
 <script src= "/scripts/jquery/init.js"></script>
 <script src= "/scripts/jquery/camera.js"></script>
 <script src= "/scripts/jquery/slider.js"></script>
+<script src="/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel();
+    });
+</script>
